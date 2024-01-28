@@ -1,0 +1,530 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+.container {
+  margin: 50px auto;
+}
+
+.container .root {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.container .root .searchForm {
+  margin: auto;
+  color: antiquewhite;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container .root .searchForm input {
+  cursor: auto;
+  background-color: black;
+  width: calc(50% - 10px);
+  border-radius: 6px;
+  padding: 5px;
+  color: blanchedalmond;
+}
+
+.container .root .mealsSearch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.container .root .meal {
+  display: flex;
+  width: calc(25% - 15px);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .container .root .meal {
+    width: auto;
+  }
+}
+
+.container .root .meal:hover .overlay {
+  bottom: 0;
+}
+
+.container .root .meal img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.container .root .meal .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: -100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.container .root .meal .overlay.catoverlay {
+  flex-direction: column;
+  text-align: center;
+}
+
+.container .root .meal .overlay h3 {
+  margin-left: 10px;
+}
+
+.sidebar {
+  background-color: black;
+  display: flex;
+  position: fixed;
+  z-index: 999;
+  justify-content: space-between;
+  left: -240px;
+  top: 0;
+  height: 100%;
+  width: 300px;
+  transition: 0.5s;
+}
+
+.sidebar .darkside {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.sidebar .darkside .downAside {
+  color: antiquewhite;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar ul {
+  background-color: black;
+  padding: 20px;
+  width: 240px;
+}
+
+.sidebar ul li {
+  color: beige;
+  font-size: 16px;
+  margin: 20px 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.sidebar ul li:hover {
+  opacity: 0.7;
+}
+
+.sidebar .light {
+  width: 60px;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar .light i {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.sidebar .light .fa-globe,
+.sidebar .light .fa-share-nodes {
+  font-size: 20px;
+  margin: 0 2px;
+}
+
+.sidebar .light p {
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.light img {
+  width: 100%;
+}
+
+.asideicon {
+  display: flex;
+}
+
+.area {
+  flex-direction: column;
+  padding: 0 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.area h3 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 33.6px;
+}
+
+.area p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 10px 0;
+}
+
+.area .fa-drumstick-bite {
+  font-weight: 900;
+  line-height: 64px;
+}
+
+.single {
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.single .mealpic {
+  width: 33%;
+  padding: 15px;
+}
+
+@media (max-width: 768px) {
+  .single .mealpic {
+    width: 100%;
+  }
+}
+
+.single .mealpic img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.single .mealpic h3 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 38.4px;
+}
+
+.single .mealinst {
+  width: calc(67% - 20px);
+  padding: 15px;
+}
+
+@media (max-width: 768px) {
+  .single .mealinst {
+    width: 100%;
+  }
+}
+
+.single .mealinst h4,
+.single .mealinst h5,
+.single .mealinst h3 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 33.6px;
+  margin: 10px 0;
+}
+
+.single .mealinst p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.single .mealinst .recspans span {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #cff4fc;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: rgb(5, 81, 96);
+  margin: 5px;
+}
+
+.single .gr,
+.single .pinkish,
+.single .re {
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 7px;
+  margin: 0.5rem;
+}
+
+.single .re {
+  color: #fff;
+  background-color: #dc3545;
+}
+
+.single .re:hover {
+  background-color: #b02a37;
+}
+
+.single .pinkish {
+  color: #842029;
+  background-color: #f8d7da;
+  border: #f8d7da;
+}
+
+.single .gr {
+  color: #fff;
+  background-color: #198754;
+}
+
+.single .gr:hover {
+  background-color: #146c43;
+}
+
+.container .root .contact {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .root .contact .form {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.container .root .contact .form .inp {
+  width: calc(50% - 10px);
+}
+
+@media (max-width: 576px) {
+  .container .root .contact .form .inp {
+    width: 100%;
+  }
+}
+
+.container .root .contact .form .inp input {
+  width: 100%;
+  padding: 12px 10px;
+  background-color: white;
+  color: black;
+}
+
+.container .root .contact .form .inp span {
+  background-color: rgba(255, 0, 0, 0.3);
+  color: white;
+  width: 100%;
+  display: block;
+  padding: 10px;
+  line-height: 1.2;
+  display: none;
+}
+
+.container .root .contact .form .inp span.active {
+  display: block;
+}
+
+.container .root .contact .form button {
+  padding: 10px;
+  color: #ba1a08;
+  background-color: black;
+  border: 1px solid #ba1a08;
+  border-radius: 5px;
+  transition: 0.2s;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: not-allowed;
+}
+
+.container .root .contact .form button:hover {
+  background-color: #ba1a08;
+  color: white;
+}
+
+.container .root .contact .form button.active {
+  cursor: pointer;
+}
+
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.loader.active {
+  display: block;
+}
+
+.loader .lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.loader .lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+
+.loader .lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  margin: -4px 0 0 -4px;
+}
+
+.loader .lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+
+.loader .lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+
+.loader .lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+
+.loader .lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+
+.loader .lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+
+.loader .lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+
+.loader .lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+
+.loader .lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+
+.loader .lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+
+.loader .lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+
+.loader .lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+
+.loader .lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+
+.loader .lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+
+.loader .lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+
+.loader .lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+
+.loader .lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
